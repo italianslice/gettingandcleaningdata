@@ -53,25 +53,6 @@ combined_Dataset = merge(combined_Dataset,act_Type,by='activityId',all.x=TRUE);
 #Updating the colNames vector to include the new column names after merge
 colNames  = colnames(combined_Dataset); 
 
-for (i in 1:length(colNames)) #Basic for Loop to easily clean up the variable names
-{
-  colNames[i] = gsub("\\()","",colNames[i])
-  colNames[i] = gsub("-std$","StdDev",colNames[i])
-  colNames[i] = gsub("-mean","Mean",colNames[i])
-  colNames[i] = gsub("^(t)","time",colNames[i])
-  colNames[i] = gsub("^(f)","freq",colNames[i])
-  colNames[i] = gsub("([Gg]ravity)","Gravity",colNames[i])
-  colNames[i] = gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body",colNames[i])
-  colNames[i] = gsub("[Gg]yro","Gyro",colNames[i])
-  colNames[i] = gsub("AccMag","AccMagnitude",colNames[i])
-  colNames[i] = gsub("([Bb]odyaccjerkmag)","BodyAccJerkMagnitude",colNames[i])
-  colNames[i] = gsub("JerkMag","JerkMagnitude",colNames[i])
-  colNames[i] = gsub("GyroMag","GyroMagnitude",colNames[i])
-};
-
-#Taking the new, clean column headers, and re-assigning them to the combined_Dataset set
-colnames(combined_Dataset) = colNames;
-
 #Create a new table, no_Activity_Type without the act_Type column
 no_Activity_Type = combined_Dataset[,names(combined_Dataset) != 'activityType'];
 
