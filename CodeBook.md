@@ -10,4 +10,4 @@ Below were the requirements for the project:
 4) Appropriately labels the data set with descriptive variable names.
 5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-Follow comments within the run_analysis.R to follow my code and though process.
+Follow comments within the run_analysis.R to follow my code and thought process.
